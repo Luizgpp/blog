@@ -1,5 +1,5 @@
 <!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
+<ul id="dropdown1" class="dropdown-content white">
   <li><a href="#!">one</a></li>
   <li class="divider"></li>
   <li><a href="#!">two</a></li>
