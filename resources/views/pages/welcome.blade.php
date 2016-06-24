@@ -3,6 +3,11 @@
 
 @section('title', '| Homepage')
 
+@section('paralax')
+  @include('partials._paralax')
+@endsection
+
+
 @section('content')
 
   <div class="row">
