@@ -3,7 +3,8 @@
 @section('title', '| View Post')
 
 @section('content')
+  <h1>{{ $post->title}}</h1>
   <p>
-    This is the blog post
+    {{$post->body}}
   </p>
 @endsection
