@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use Session;
+
 use App\Post;
 
 class PostController extends Controller
@@ -49,6 +51,8 @@ class PostController extends Controller
 
     $post->save();
 
+    Session::flash('success','Post gravado com sucesso!');
+
     return redirect()->route('posts.show', $post->id);
   }
 
@@ -60,7 +64,7 @@ class PostController extends Controller
   */
   public function show($id)
   {
-
+      return view('posts.show');
   }
 
   /**

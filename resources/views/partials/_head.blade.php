@@ -1,5 +1,7 @@
 
 <meta charset="utf-8">
+<!--Import jQuery before materialize.js-->
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 <!--Import Google Icon Font-->
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!-- Compiled and minified CSS -->

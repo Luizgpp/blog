@@ -19,7 +19,7 @@
         </div>
 
         <div class="input-field col s12">
-          <i class="material-icons prefix">account_circle</i>
+          <i class="material-icons prefix">reorder</i>
           {{ Form::label('body','Post Body:') }}
           {{ Form::textarea('body',null,array('class'=>'materialize-textarea','required'=>'')) }}
         </div>
@@ -35,5 +35,5 @@
   @endsection
 
   @section('scripts')
-    {{!! Html::script('js/parsley.min.js') !!}}
+    {!! Html::script('js/parsley.min.js') !!}
   @endsection
