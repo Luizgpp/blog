@@ -5,5 +5,5 @@
     </div>
   </div>
 
-  <div class="parallax"><img src="http://www.wallpapermade.com/images/wallpapers/originals/world-of-tanks-main-battle-tank-artwork-wallpaper-2656.jpg"></div>
+  <div class="parallax"><img src="img/tanks-parallax.jpg"></div>
 </div>

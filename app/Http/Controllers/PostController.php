@@ -19,7 +19,9 @@ class PostController extends Controller
   */
   public function index()
   {
-    //
+    $posts = Post::orderBy('created_at','desc')->get();
+
+    return view('posts.index')->withPosts($posts);
   }
 
   /**
@@ -64,7 +66,8 @@ class PostController extends Controller
   */
   public function show($id)
   {
-      return view('posts.show');
+    $post = Post::find($id);
+    return view('posts.show')->withPost($post);
   }
 
   /**
@@ -75,7 +78,8 @@ class PostController extends Controller
   */
   public function edit($id)
   {
-    //
+    $post = Post::find($id);
+    return view('posts.edit')->withPost($post);
   }
 
   /**
@@ -87,7 +91,21 @@ class PostController extends Controller
   */
   public function update(Request $request, $id)
   {
-    //
+    $this->validate($request, array(
+      'title' => 'required|max:255',
+      'body' => 'required'
+    ));
+
+    $post = Post::find($id);
+
+    $post->title = $request->title;
+    $post->body = $request->body;
+
+    $post->save();
+
+    Session::flash('success','Post gravado com sucesso');
+
+    return redirect()->route('posts.show',$post->id);
   }
 
   /**
