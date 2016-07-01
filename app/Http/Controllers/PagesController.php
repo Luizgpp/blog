@@ -6,11 +6,15 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Post;
+
 class PagesController extends Controller
 {
     public function getIndex()
     {
-      return view('pages.welcome');
+      $posts = Post::orderBy('created_at','DESC')->limit(5)->get();
+
+      return view('pages.welcome')->withPosts($posts);
     }
 
     public function getAbout()

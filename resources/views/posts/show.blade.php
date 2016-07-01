@@ -30,7 +30,14 @@
                 {!! Html::linkRoute('posts.edit', 'Editar', array($post->id), array('class'=>'waves-effect waves-light btn light-blue darken-4')) !!}
               </div>
               <div class="col s6">
-                {!! Html::linkRoute('posts.destroy', 'Apagar', array($post->id), array('class'=>'waves-effect waves-light btn red darken-3')) !!}
+                {{ Form::open(['route'=>['posts.destroy',$post->id],'method'=>'DELETE']) }}
+                {{ Form::submit('Apagar', ['class'=>'waves-effect waves-light btn red darken-3']) }}
+                {{ Form::close() }}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col l12">
+                {{ Html::linkRoute('posts.index','<< Todos os Posts',[],['class'=>'waves-effect waves-light btn'])}}
               </div>
             </div>
           </div>

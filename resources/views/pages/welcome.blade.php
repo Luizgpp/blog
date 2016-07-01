@@ -3,55 +3,35 @@
 
 @section('title', '| Homepage')
 
-@section('paralax')
-  @include('partials._paralax')
-@endsection
+  @section('paralax')
+    @include('partials._paralax')
+  @endsection
 
 
-@section('content')
+  @section('content')
 
-  <div class="row">
-    <div class="col l8">
-      <!--Post -->
-      <div class="post">
-        <h5>Post Title</h5>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <button class="btn waves-effect waves-light">Ready More
-          <i class="material-icons right">send</i>
-        </button>
+    <div class="row">
+      <div class="col l8">
+        <!--Post -->
+        @foreach($posts as $post)
+
+          <div class="post">
+            <h5>{{ $post->title}}</h5>
+            <p>
+              {{ substr($post->body,0,350) }} {{ strlen($post->body) > 350 ? "..." : ""}}
+            </p>
+            <a href="#" class="btn waves-effect waves-light">Ler
+              <i class="material-icons right">send</i>
+            </a>
+          </div>
+          <!-- End Post-->
+          <p class="divider"></p>
+        @endforeach
+
+        <p class="divider"></p>
       </div>
-      <!-- End Post-->
-      <p class="divider"></p>
-
-      <!--Post -->
-      <div class="post">
-        <h5>Post Title</h5>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <button class="btn waves-effect waves-light">Ready More
-          <i class="material-icons right">send</i>
-        </button>
+      <div class="col l3 offset-l1">
+        SideBar
       </div>
-      <!-- End Post-->
-      <p class="divider"></p>
-      <!--Post -->
-      <div class="post">
-        <h5>Post Title</h5>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <button class="btn waves-effect waves-light">Ready More
-          <i class="material-icons right">send</i>
-        </button>
-      </div>
-      <!-- End Post-->
-      <p class="divider"></p>
     </div>
-    <div class="col l3 offset-l1">
-      SideBar
-    </div>
-  </div>
-@endsection
+  @endsection

@@ -21,7 +21,7 @@
     </div> <!-- end of the .row -->
     <div class="row">
       <div class="col l12">
-        <table class="responsive-table highlight bordered">
+        <table class="responsive-table bordered">
           <thead>
             <tr>
               <th data-field="id">#</th>
@@ -40,20 +40,31 @@
                 <td>
                   {{ $post->title }}
                 </td>
-                <td class="truncate">
-                  {{ $post->body }}
+                <td>
+                  {{ substr($post->body,0,290) }}{{ strlen($post->body) > 290 ? "..." : ""}}
                 </td>
                 <td>
                   {{ date('d M Y', strtotime($post->created_at)) }}
                 </td>
                 <td>
-                  <a href="{{ route('posts.show',$post->id) }}" class="btn btn-font-size btn-block green darken-4">Ver</a>
-                  <a href="{{ route('posts.edit',$post->id) }}" class="btn btn-font-size btn-block lime darken-2">Editar</a>
+                  <a href="{{ route('posts.show',$post->id) }}" class="waves-effect waves-light btn btn-font-size btn-block green darken-4">Ver</a>
+                  <a href="{{ route('posts.edit',$post->id) }}" class="waves-effect waves-light btn btn-font-size btn-block lime darken-2">Editar</a>
                 </td>
               </tr>
             @endforeach
           </tbody>
         </table>
+        <div class="row">
+          <div class="col l12 center-align">
+            {{ $posts->links() }}
+          </div>
+        </div>
       </div>
     </div>
+  @endsection
+
+  @section('scripts')
+    <script type="text/javascript">
+      $( ".pagination" ).find( "li" ).addClass('waves-effect');
+    </script>
   @endsection

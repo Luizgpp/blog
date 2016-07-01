@@ -1,15 +1,29 @@
+/*Parallax*/
+.parallax-container {
+  height: 50vh;
+}
+.parallax img{
+  bottom: -40%;
+  left: 40%;
+}
+
+.parallax-container .row{
+  background-color: rgba(26, 0, 0, 0.5);
+}
+/*Parallax*/
+
+/*BTN Features*/
 .btn-h1-spacing{
   margin: 2.1rem 0 1.68rem 0;
 }
 
 .btn-block{
-  width: 100%;
+  display: block;
+  margin: .3rem 0 .3rem 0;
 }
 
 .btn-font-size{
   font-size: .9rem;
 }
 
-.truncate{
-  width: 30rem;
-}
+/*BTN Features*/
