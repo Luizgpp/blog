@@ -10,6 +10,10 @@ $( document ).ready(function() {
 });
 </script>
 
+<script type="text/javascript">
+$( ".pagination" ).find( "li" ).addClass('waves-effect');
+</script>
+
 <script>
 function toastError(error) {
   Materialize.toast(error, 6000,'red darken-4');
