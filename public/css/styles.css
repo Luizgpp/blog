@@ -2,12 +2,9 @@
 .parallax-container {
   height: 50vh;
 }
-.parallax img{
-  bottom: -40%;
-  left: 40%;
-}
 
 .parallax-container .row{
+  background-color: #1a0000;
   background-color: rgba(26, 0, 0, 0.5);
 }
 /*Parallax*/

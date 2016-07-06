@@ -20,7 +20,7 @@
             <p>
               {{ substr($post->body,0,350) }} {{ strlen($post->body) > 350 ? "..." : ""}}
             </p>
-            <a href="#" class="btn waves-effect waves-light">Ler
+            <a href="{{ url('blog/'.$post->slug) }}" class="btn waves-effect waves-light">Ler
               <i class="material-icons right">send</i>
             </a>
           </div>

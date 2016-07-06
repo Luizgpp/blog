@@ -11,6 +11,7 @@
 |
 */
 
+Route::get('blog/{slug}','BlogController@getSingle')->name('blog.single')->where('slug','[\w\d\-\_]+');
 
 Route::get('contact', 'PagesController@getContact');
 

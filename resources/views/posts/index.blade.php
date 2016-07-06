@@ -65,6 +65,6 @@
 
   @section('scripts')
     <script type="text/javascript">
-      $( ".pagination" ).find( "li" ).addClass('waves-effect');
+    $( ".pagination" ).find( "li" ).addClass('waves-effect');
     </script>
   @endsection

@@ -22,6 +22,12 @@
                 <dl><strong>Atualizado em:</strong></dl>
                 <dt>{{ date('d M Y - H:i',strtotime($post->updated_at)) }}</dt>
               </div>
+              <div class="col s12">
+                <span>
+                  <strong>URL:</strong>
+                </span>
+                <span><a href="{{ route('blog.single',$post->slug)}}">{{ route('blog.single',$post->slug)}}</a></span>
+              </div>
             </div>
           </div>
           <div class="card-action">

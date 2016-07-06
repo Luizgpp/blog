@@ -11,17 +11,23 @@
         <h1>Create New Post</h1>
         <div class="divider">
         </div>
-        {!! Form::open(array('route' => 'posts.store','data-parsley-validate'=>'')) !!}
+        {!! Form::open(array('route' => 'posts.store')) !!}
         <div class="input-field col s12">
           <i class="material-icons prefix">account_circle</i>
           {{ Form::label('title','Title') }}
-          {{ Form::text('title',null,array('class'=>'validate','required'=>'','maxlength'=>'255')) }}
+          {{ Form::text('title',null,array('class'=>'validate','required'=>'','maxlength'=>255)) }}
+        </div>
+
+        <div class="input-field col s12">
+          <i class="material-icons prefix">link</i>
+          {{ Form::label('slug','Slug') }}
+          {{ Form::text('slug',null,array('class'=>'validate','required'=>'','maxlength'=>255)) }}
         </div>
 
         <div class="input-field col s12">
           <i class="material-icons prefix">reorder</i>
           {{ Form::label('body','Post Body:') }}
-          {{ Form::textarea('body',null,array('class'=>'materialize-textarea','required'=>'')) }}
+          {{ Form::textarea('body',null,array('class'=>'materialize-textarea validate','required'=>'')) }}
         </div>
 
         <div class="col s12 center-align">

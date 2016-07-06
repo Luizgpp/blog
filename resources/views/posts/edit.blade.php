@@ -15,6 +15,12 @@
         </div>
 
         <div class="input-field col s12">
+          <i class="material-icons prefix">link</i>
+          {{ Form::label('slug','Slug') }}
+          {{ Form::text('slug',null,array('class'=>'validate','required'=>'','maxlength'=>255)) }}
+        </div>
+
+        <div class="input-field col s12">
           <i class="material-icons prefix">reorder</i>
           {{ Form::label('body','Post Body:') }}
           {{ Form::textarea('body',null,array('class'=>'materialize-textarea','required'=>'')) }}
