@@ -12,6 +12,10 @@ use App\Post;
 
 class PostController extends Controller
 {
+
+  public function __construct(){
+    $this->middleware('auth');
+  }
   /**
   * Display a listing of the resource.
   *
@@ -107,7 +111,7 @@ class PostController extends Controller
       ));
     }
     $post = Post::find($id);
-    
+
     $post->title = $request->title;
     $post->slug = $request->slug;
     $post->body = $request->body;

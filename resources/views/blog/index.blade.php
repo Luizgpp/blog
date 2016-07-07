@@ -18,8 +18,7 @@
           <p>
             {{ substr($post->body,0.250) }}{{strlen($post->body) > 350 ? '...' : ""}}
           </p>
-
-          <a href="{{ route('blog.single','$post->id') }}" class="waves-effect waves-light btn">Ver mais...</a>
+          <a href="{{ route('blog.single', $post->slug) }}" class="waves-effect waves-light btn">Ver mais...</a>
         </div>
       </div>
       <div class="divider">
