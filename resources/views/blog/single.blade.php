@@ -9,6 +9,12 @@
         <p>
           {{ $post->body }}
         </p>
+        <div class="divider">
+
+        </div>
+        <p>
+          Postado em: {{ $post->category->name }}
+        </p>
       </div>
   </div>
 @endsection

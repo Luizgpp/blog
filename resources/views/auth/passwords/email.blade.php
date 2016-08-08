@@ -1,3 +1,4 @@
+
 @extends('main')
 
 @section('title', '| Recuperar minha senha')
@@ -50,4 +51,4 @@
       Materialize.toast("{{ session('status')}}", 4000);
       </script>
     @endif
-  @endsection
+  @endsection'
