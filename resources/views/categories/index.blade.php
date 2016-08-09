@@ -8,12 +8,13 @@
       </div>
     </div>
     <div class="row">
-      <div class="col l9">
-        <table class="responsive-table bordered">
+      <div class="col l9 " id="tabela">
+        <table  class="responsive-table bordered">
           <thead>
             <tr>
               <th data-field="id">#</th>
-              <th data-field="body">Nome</th>
+              <th data-field="name">Nome</th>
+              <th data-field="button"></th>
             </tr>
           </thead>
           <tbody>
@@ -24,6 +25,9 @@
                 </th>
                 <td>
                   {{ $category->name }}
+                </td>
+                <td>
+                  <button type="button" id="btn-delete" class="waves-effect waves-light btn btn-font-size red darken-3">Excluir</button>
                 </td>
               </tr>
             @endforeach
