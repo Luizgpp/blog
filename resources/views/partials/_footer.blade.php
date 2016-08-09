@@ -18,7 +18,7 @@
   </div>
   <div class="footer-copyright brown darken-4">
     <div class="container">
-      © 2016 Copyright Text
+      © 2016 NofPowells
       <a class="grey-text text-lighten-4 right" href="#!">World of Tanks - Brasil</a>
     </div>
   </div>

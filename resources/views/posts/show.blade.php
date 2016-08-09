@@ -14,6 +14,10 @@
         <div class="card teal darken-3  center-align" >
           <div class="card-content white-text">
             <div class="row">
+              <div class="col s12">
+                <dl><strong>CATEGORIA:</strong></dl>
+                <dt>{{ $post->category->name }}</dt>
+              </div>
               <div class="col s6">
                 <dl><strong>Criado em:</strong></dl>
                 <dt>{{ date('d M Y - H:i',strtotime($post->created_at)) }}</dt>

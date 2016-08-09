@@ -21,39 +21,54 @@
         </div>
 
         <div class="input-field col s12">
-          <i class="material-icons prefix">reorder</i>
-          {{ Form::label('body','Post Body:') }}
-          {{ Form::textarea('body',null,array('class'=>'materialize-textarea','required'=>'')) }}
-        </div>
+          <i class="material-icons prefix">style</i>
+          {{ Form::select('category_id', $categories,null) }}
+          <label for="category_id">Categoria:</label>
+        </select>
       </div>
-      <div class="col l4">
-        <div class="card teal darken-3  center-align" >
-          <div class="card-content white-text">
-            <div class="row">
-              <div class="col s6">
-                <dl><strong>Criado em:</strong></dl>
-                <dt>{{ date('d M Y - H:i',strtotime($post->created_at)) }}</dt>
-              </div>
-              <div class="col s6">
-                <dl><strong>Atualizado em:</strong></dl>
-                <dt>{{ date('d M Y - H:i',strtotime($post->updated_at)) }}</dt>
-              </div>
-            </div>
-          </div>
-          <div class="card-action">
-            <div class="row">
-              <div class="col s6">
-                {!! Html::linkRoute('posts.show', 'Cancelar', array($post->id), array('class'=>'waves-effect waves-light btn red darken-3')) !!}
-              </div>
-              <div class="col s6">
-                {{-- <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="submit">Salvar</button> --}}
-                {{ Form::submit('Salvar',['class'=>'btn waves-effect waves-light light-blue darken-4']) }}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {!! Form::close() !!}
-    </div>
 
-  @endsection
+      <div class="input-field col s12">
+        <i class="material-icons prefix">reorder</i>
+        {{ Form::label('body','Post Body:') }}
+        {{ Form::textarea('body',null,array('class'=>'materialize-textarea','required'=>'')) }}
+      </div>
+    </div>
+    <div class="col l4">
+      <div class="card teal darken-3  center-align" >
+        <div class="card-content white-text">
+          <div class="row">
+            <div class="col s6">
+              <dl><strong>Criado em:</strong></dl>
+              <dt>{{ date('d M Y - H:i',strtotime($post->created_at)) }}</dt>
+            </div>
+            <div class="col s6">
+              <dl><strong>Atualizado em:</strong></dl>
+              <dt>{{ date('d M Y - H:i',strtotime($post->updated_at)) }}</dt>
+            </div>
+          </div>
+        </div>
+        <div class="card-action">
+          <div class="row">
+            <div class="col s6">
+              {!! Html::linkRoute('posts.show', 'Cancelar', array($post->id), array('class'=>'waves-effect waves-light btn red darken-3')) !!}
+            </div>
+            <div class="col s6">
+              {{-- <button class="btn waves-effect waves-light light-blue darken-4" type="submit" name="submit">Salvar</button> --}}
+              {{ Form::submit('Salvar',['class'=>'btn waves-effect waves-light light-blue darken-4']) }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {!! Form::close() !!}
+  </div>
+
+@endsection
+
+@section('scripts')
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+  </script>
+@endsection

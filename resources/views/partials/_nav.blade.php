@@ -3,6 +3,7 @@
 
   <ul id="dropdown1" class="dropdown-content white">
     <li><a href="{{ route('posts.index') }}">Posts</a></li>
+    <li><a href="{{ route('categories.index')}}">Categorias</a></li>
     <li class="divider"></li>
     <li class="divider"></li>
     <li><a href="{{ route('logout') }}">Logout</a></li>
