@@ -25,13 +25,24 @@
         </div>
 
         <div class="input-field col s12">
-          <i class="material-icons prefix">style</i>
+          <i class="material-icons prefix">local_offer</i>
           <select name="category_id">
             <option value="" disabled selected>Escolha a Categoria</option>
             @foreach ($categories as $category)
               <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach
             <label for="category_id">Categoria:</label>
+          </select>
+        </div>
+
+        <div class="input-field col s12">
+          <i class="material-icons prefix">style</i>
+          <select multiple name="tags_id[]">
+            <option value="" disabled selected>Escolha a(s) Tag(s)</option>
+            @foreach ($tags as $tag)
+              <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+            @endforeach
+            <label for="category_id">Tags:</label>
           </select>
         </div>
 
@@ -53,7 +64,7 @@
 
   @section('scripts')
     {!! Html::script('js/parsley.min.js') !!}
-    
+
     <script type="text/javascript">
     $(document).ready(function() {
       $('select').material_select();

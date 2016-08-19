@@ -9,6 +9,17 @@
         <p>
           {{$post->body}}
         </p>
+
+        <div class="divider">
+
+        </div>
+        <div class="card-panel teal center-align">
+          @foreach ($post->tags as $tag)
+            <div class="chip white">
+              {{ $tag->name }}
+            </div>
+          @endforeach
+        </div>
       </div>
       <div class="col l4">
         <div class="card teal darken-3  center-align" >

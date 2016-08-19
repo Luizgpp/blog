@@ -20,4 +20,8 @@ function toastError(error) {
 };
 </script>
 
+<script type="text/javascript">
+  $(".button-collapse").sideNav();
+</script>
+
 @yield('scripts')

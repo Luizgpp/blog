@@ -28,6 +28,8 @@ Route::post('password/reset','Auth\PasswordController@reset');
 
 Route::resource('categories','CategoryController',['except'=>'create']);
 
+// tags
+Route::resource('tags','TagController',['except'=>'create']);
 
 Route::get('blog/{slug}','BlogController@getSingle')->name('blog.single')->where('slug','[\w\d\-\_]+');
 

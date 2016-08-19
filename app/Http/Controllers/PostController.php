@@ -9,7 +9,7 @@ use App\Http\Requests;
 use Session;
 
 use App\Post;
-
+use App\Tag;
 use App\Category;
 
 class PostController extends Controller
@@ -37,8 +37,9 @@ class PostController extends Controller
   public function create()
   {
     $categories = Category::all();
+    $tags = Tag::all();
 
-    return view('posts.create')->withCategories($categories);
+    return view('posts.create')->withCategories($categories)->withTags($tags);
   }
 
   /**
@@ -63,6 +64,8 @@ class PostController extends Controller
     $post->body = $request->body;
 
     $post->save();
+
+    $post->tags()->sync($request->tags_id, false);
 
     Session::flash('success','Post gravado com sucesso!');
 
@@ -92,11 +95,19 @@ class PostController extends Controller
     $post = Post::find($id);
     $categories = Category::all();
     $cats = array();
+
     foreach ($categories as $category) {
       $cats[$category->id] = $category->name;
     }
 
-    return view('posts.edit')->withPost($post)->withCategories($cats);
+    $tags = Tag::all();
+
+    $tags2 = array();
+    foreach ($tags as $tag) {
+      $tags2[$tag->id] = $tag->name;
+    }
+
+    return view('posts.edit')->withPost($post)->withCategories($cats)->withTags($tags2);
   }
 
   /**
@@ -132,6 +143,12 @@ class PostController extends Controller
     $post->body = $request->body;
 
     $post->save();
+
+    if (isset($request->tags_id)) {
+      $post->tags()->sync($request->tags_id);
+    }else {
+      $post->tags()->sync(array());
+    }
 
     Session::flash('success','Post gravado com sucesso');
 
