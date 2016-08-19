@@ -14,7 +14,6 @@
             <tr>
               <th data-field="id">#</th>
               <th data-field="name">Nome</th>
-              <th data-field="button"></th>
             </tr>
           </thead>
           <tbody>
@@ -24,10 +23,7 @@
                   {{ $tag->id }}
                 </th>
                 <td>
-                  {{ $tag->name }}
-                </td>
-                <td>
-                  <button type="button" id="btn-delete" class="waves-effect waves-light btn btn-font-size red darken-3">Excluir</button>
+                  <a href="{{ route('tags.show',$tag->id) }}"> {{ $tag->name }} </a>
                 </td>
               </tr>
             @endforeach
