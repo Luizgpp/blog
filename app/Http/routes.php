@@ -37,6 +37,8 @@ Route::get('blog','BlogController@getIndex')->name('blog.index');
 
 Route::get('contact', 'PagesController@getContact');
 
+Route::post('contact', 'PagesController@postContact')->name('post.contact');
+
 Route::get('about', 'PagesController@getAbout');
 
 Route::get('/', 'PagesController@getIndex');
