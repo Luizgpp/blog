@@ -45,7 +45,7 @@ class TagController extends Controller
     $tag->name = $request->name;
     $tag->save();
 
-    Session::flash('success','Nova tag foi criada!');
+    Session::flash('success',"Tag  $tag->name foi criada!");
 
     return redirect()->route('tags.index');
   }
@@ -93,7 +93,7 @@ class TagController extends Controller
 
     $tag->save();
 
-    Session::flash('success','Tag editada com sucesso');
+    Session::flash('success',"Tag $tag->name editada com sucesso");
 
     return redirect()->route('tags.show',$tag->id);
   }
@@ -106,6 +106,13 @@ class TagController extends Controller
   */
   public function destroy($id)
   {
-    //
+    $tag = Tag::find($id);
+    $tag->posts()->detach();
+
+    $tag->delete();
+
+    Session::flash('success',"Tag $tag->name foi deletado com sucesso");
+
+    return redirect()->route('tags.index');
   }
 }

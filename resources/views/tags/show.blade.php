@@ -8,7 +8,12 @@
         <h1>Tag {{ $tag->name }} <small>{{ $tag->posts()->count() }} {{ $tag->posts()->count() === 1 ? 'Post' : 'Posts' }}</small></h1>
       </div>
       <div class="col l2">
-          <a href="{{ route('tags.edit',$tag->id) }}" class="waves-effect waves-light btn" style="margin-top:3.5rem;"><i class="material-icons left">mode_edit</i>Edit</a>
+        <a href="{{ route('tags.edit',$tag->id) }}" class="waves-effect waves-light btn" style="margin-top:3.5rem;"><i class="material-icons left">mode_edit</i>Edit</a>
+      </div>
+      <div class="col l2">
+        {{ Form::open(['route'=>['tags.destroy', $tag->id], 'method'=>'DELETE'])}}
+        {{ Form::submit('Apagar', ['class'=>'waves-effect waves-light btn red darken-3','style'=>'margin-top:3.5rem']) }}
+        {{ Form::close()}}
       </div>
     </div>
     <div class="row">
