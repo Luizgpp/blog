@@ -24,17 +24,24 @@ Route::get('password/reset/{token?}','Auth\PasswordController@showResetForm')->n
 Route::post('password/email','Auth\PasswordController@sendResetLinkEmail');
 Route::post('password/reset','Auth\PasswordController@reset');
 
-// categories
+//Blog
+Route::get('blog','BlogController@getIndex')->name('blog.index');
 
+//Posts
+Route::resource('posts','PostController');
+
+// slugs
+Route::get('blog/{slug}','BlogController@getSingle')->name('blog.single')->where('slug','[\w\d\-\_]+');
+
+// categories
 Route::resource('categories','CategoryController',['except'=>'create']);
 
 // tags
 Route::resource('tags','TagController',['except'=>'create']);
 
-Route::get('blog/{slug}','BlogController@getSingle')->name('blog.single')->where('slug','[\w\d\-\_]+');
-
-Route::get('blog','BlogController@getIndex')->name('blog.index');
-
+// comments
+Route::post('comments/{post_id}','CommentsController@store')->name('comments.store');
+// Pages
 Route::get('contact', 'PagesController@getContact');
 
 Route::post('contact', 'PagesController@postContact')->name('post.contact');
@@ -42,5 +49,3 @@ Route::post('contact', 'PagesController@postContact')->name('post.contact');
 Route::get('about', 'PagesController@getAbout');
 
 Route::get('/', 'PagesController@getIndex');
-
-Route::resource('posts','PostController');

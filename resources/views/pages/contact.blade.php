@@ -12,17 +12,17 @@
           <div class="row">
             <div class="input-field col s6">
               <i class="material-icons prefix">E</i>
-              <input id="email" name="email" type="email"  required class="validate">
-              <label for="email" data-error="wrong" data-success="right">mail</label>
+              <input name="email" type="email"  required class="validate">
+              <label for="email">mail</label>
             </div>
             <div class="input-field col s6">
               <i class="material-icons prefix">A</i>
-              <input id="icon_telephone" name="subject"  required type="tel" class="validate">
+              <input name="subject"  required type="tel" class="validate">
               <label for="subject">ssunto</label>
             </div>
             <div class="input-field col s12">
               <i class="material-icons prefix">M</i>
-              <textarea id="textarea1" name="message" required class="materialize-textarea"></textarea>
+              <textarea name="message" required class="materialize-textarea"></textarea>
               <label for="message">ensagem</label>
             </div>
             <div class="col l12 center-align">
