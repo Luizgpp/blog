@@ -38,6 +38,7 @@
     </div>
     <div class="row">
       <div class="col s12 m8 offset-m2">
+        <h4 class="center brown-text text-darken-1">Deixe seu Comentário</h4>
         {{ Form::open(['route'=>['comments.store', $post->id],'method'=>'POST'])}}
         {{ csrf_field() }}
         <div class="row">
