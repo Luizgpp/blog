@@ -15,11 +15,3 @@
     </script>
   @endforeach
 @endif
-
-@section('scripts')
-  <script>
-   function toastError(error) {
-    Materialize.toast(error, 6000,'red darken-4');
-  };
-  </script>
-@endsection

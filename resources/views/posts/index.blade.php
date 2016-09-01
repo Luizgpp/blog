@@ -62,9 +62,3 @@
       </div>
     </div>
   @endsection
-
-  @section('scripts')
-    <script type="text/javascript">
-      $( ".pagination" ).find( "li" ).addClass('waves-effect');
-    </script>
-  @endsection

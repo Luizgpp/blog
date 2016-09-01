@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddSlugToPosts extends Migration
+class AddForeignComments extends Migration
 {
     /**
      * Run the migrations.
@@ -12,8 +12,8 @@ class AddSlugToPosts extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function($table){
-          $table->string('slug')->unique()->after('body');
+        Schema::table('comments', function (Blueprint $table) {
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade');
         });
     }
 
@@ -24,8 +24,8 @@ class AddSlugToPosts extends Migration
      */
     public function down()
     {
-        Schema::table('posts',function($table){
-          $table->dropColumn('slug');
+        Schema::table('comments', function (Blueprint $table) {
+            $table->dropForeign(['post_id']);
         });
     }
 }
