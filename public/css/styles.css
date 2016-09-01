@@ -3,10 +3,12 @@
 .parallax-container {
     height: 50vh;
 }
+
 .parallax-container .row {
     background-color: #1a0000;
     background-color: rgba(26, 0, 0, 0.5);
 }
+
 
 /*Parallax*/
 
@@ -16,12 +18,27 @@
 .btn-h1-spacing {
     margin: 2.1rem 0 1.68rem 0;
 }
+
 .btn-block {
     display: block;
     margin: .3rem 0 .3rem 0;
 }
+
 .btn-font-size {
     font-size: .9rem;
 }
 
+
 /*BTN Features*/
+
+
+/*Comments*/
+
+.collection .collection-item.avatar .time {
+    font-size: 11px;
+    font-style: italic;
+    color: #aaa;
+}
+
+
+/*Comments*/

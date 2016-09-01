@@ -19,12 +19,14 @@
     </div>
     <div class="row">
       <div class="col s12 m10 offset-m1">
-        <ul class="collection">
+        <ul class="collection with-header">
+          <li class="collection-header"><h5><i class="small material-icons">question_answer</i> {{ $post->comments->count() }} Comentários</h5></li>
           @foreach($post->comments as $comment)
 
             <li class="collection-item avatar">
-              <i class="material-icons circle green">comment</i>
+              <img src="{{ "https://www.gravatar.com/avatar/" . md5(strtolower(trim($comment->email))) . "?s=50&d=wavatar"  }}" alt="" class="circle">
               <span class="title">{{ $comment->name }}</span>
+              <p class="time">{{ date('d F Y - H:i', strtotime($comment->created_at)) }}</p>
               <p>
                 {{ $comment->comment }}
               </p>
