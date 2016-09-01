@@ -24,4 +24,6 @@ function toastError(error) {
   $(".button-collapse").sideNav();
 </script>
 
+{{ Html::script('js/delete_method_laravel.js') }}
+
 @yield('scripts')

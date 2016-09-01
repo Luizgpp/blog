@@ -5,7 +5,7 @@
   @section('content')
     <div class="row">
       <div class="col l8">
-        <h1>{{ $post->title}}</h1>
+        <h2>{{ $post->title}}</h2>
         <p>
           {{$post->body}}
         </p>
@@ -65,5 +65,50 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col l12">
+        <div class="card-panel">
+          <h5>Comentários <small class="grey-text text-darken-1" > Total {{ $post->comments->count()}}</small></h5>
+          <table class="bordered responsive-table highlight">
+            <thead>
+              <th>
+                Nome
+              </th>
+              <th>
+                Email
+              </th>
+              <th>
+                Comentário
+              </th>
+              <th styles="width:20px">
+
+              </th>
+            </thead>
+            <tbody>
+              @foreach($post->comments as $comment)
+                <tr>
+                  <td>
+                    {{$comment->name}}
+                  </td>
+                  <td>
+                    {{$comment->email}}
+                  </td>
+                  <td>
+                    {{$comment->comment}}
+                  </td>
+                  <td>
+                    <a href="{{ route('comments.edit',$comment->id)}}" class="waves-effect waves-light btn"><i class="material-icons">mode_edit</i></a>
+                    <a href="{{ route('comments.destroy',$comment->id)}}" data-method="delete" data-token="{{csrf_token()}}" data-confirm="Tem certeza?" class="waves-effect waves-light btn red"><i class="material-icons">delete_forever</i></a>
+                  </td>
+                </tr>
+              @endforeach
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 
   @endsection
+@section('script')
+    {{ Html::script('js/delete_method_laravel.js') }}
+@endsection
